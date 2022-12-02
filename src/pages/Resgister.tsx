@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import register from '../assets/images/register.jpg'
+import register from '../assets/images/regist.jpg'
 function Resgister() {
   return (
     <div className='flex justify-between flex-wrap bg-gray-900 text-white'>
@@ -25,9 +25,9 @@ function Resgister() {
                 <input className='border-2 px-7 py-2 rounded-lg' type="password" placeholder='password...' />
             </div>
             <div className=' self-center '>
-                <button className=' text-white w-[19rem] py-2 hover:bg-violet-800 rounded-lg  bg-violet-700'>SignUp</button>
+                <button className=' text-white w-[19rem] py-2 hover:bg-blue-600 rounded-lg  bg-blue-700'>SignUp</button>
                 <div>
-                    <p className='text-gray-400'>Aleredy have account? <Link to='/' className='text-violet-500 hover:text-violet-800 font-semibold'>Sign up</Link> </p>
+                    <p className='text-gray-400'>Aleredy have account? <Link to='/' className='text-blue-500 hover:text-blue-800 font-semibold'>Sign up</Link> </p>
                 </div>
             </div>
         </form>
