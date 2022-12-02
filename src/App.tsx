@@ -1,12 +1,13 @@
 import './App.css'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import {Login} from './pages/index'
+import {Login, Resgister} from './pages/index'
 function App() {
 
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Login />} />
+      <Route path='/' element={<Login />} />
+      <Route path='/register' element={<Resgister />} />
       </Routes>
     </Router>
   )
