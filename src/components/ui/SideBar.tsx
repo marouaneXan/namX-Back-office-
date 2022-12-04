@@ -12,6 +12,9 @@ function SideBar() {
         <section className=''>
             <h1 className=' font-extrabold text-2xl'>Nam.X</h1>
         </section>
+        <section className=''>
+            <h1 className=' font-extrabold text-2xl'>Nam.X</h1>
+        </section>
         <section className=' my-auto flex flex-col justify-between h-[50%] text-gray-400 capitalize  font-medium text-base'>
         <NavLink
             to="/dashboard"
