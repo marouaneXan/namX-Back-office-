@@ -4,10 +4,10 @@ import SideBar from '../ui/SideBar'
 function Layaout({children} : any) {
   return (
     <main className='flex'>
-      <header className=' border-r-2 border-gray-100 shadow-lg shadow-gray-200'>
+      <header className=' bg-gray-50 rounded-t-[3rem] rounded-r-[3rem]'>
         <SideBar />
       </header>
-      <div>
+      <div className=' '>
       <article>{children}</article>
       </div>
     </main>

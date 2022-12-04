@@ -9,7 +9,7 @@ import TaskRoundedIcon from '@mui/icons-material/TaskRounded';
 function SideBar() {
   return (
     <div className='pr-16 pl-10 py-10 h-screen flex flex-col justify-between'>
-        <section>
+        <section className=''>
             <h1 className=' font-extrabold text-2xl'>Nam.X</h1>
         </section>
         <section className=' my-auto flex flex-col justify-between h-[50%] text-gray-400 capitalize  font-medium text-base'>
