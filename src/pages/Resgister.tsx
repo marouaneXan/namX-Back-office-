@@ -22,7 +22,7 @@ function Resgister() {
             </div>
             <div className='flex flex-col'>
                 <label className='' htmlFor="">password</label>
-                <input className='border-2 px-7 py-2 rounded-lg' type="password" placeholder='password...' />
+                <input className='border-2 px-7 py-2 rounded-lg bg' type="password" placeholder='password...' />
             </div>
             <div className=' self-center '>
                 <button className=' text-white w-[19rem] py-2 hover:bg-blue-600 rounded-lg  bg-blue-700'>SignUp</button>

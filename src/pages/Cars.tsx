@@ -1,8 +1,11 @@
 import React from 'react'
+import Form from '../components/form/Form'
 
 function Cars() {
   return (
-    <div>Cars</div>
+    <div>
+      <Form />
+    </div>
   )
 }
 
