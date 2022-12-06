@@ -4,6 +4,8 @@ import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';import D
 import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import TimeToLeaveRoundedIcon from '@mui/icons-material/TimeToLeaveRounded';
 import TaskRoundedIcon from '@mui/icons-material/TaskRounded';
+import ColorLensRoundedIcon from '@mui/icons-material/ColorLensRounded';
+import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRounded';
 
 
 function SideBar() {
@@ -32,6 +34,24 @@ function SideBar() {
                 <p>Clients</p>
             </NavLink>
             <NavLink              
+            to="/color"
+            className={({ isActive }) =>
+            isActive ? ' flex gap-2  text-gray-500 bg-slate-100 p-3 w-[90%]  border-l-4 border-blue-700' : ' flex gap-2 p-3  '
+            }
+            >
+                <ColorLensRoundedIcon />
+                <p>Colors</p>
+            </NavLink>
+            <NavLink              
+            to="/detaille"
+            className={({ isActive }) =>
+            isActive ? ' flex gap-2  text-gray-500 bg-slate-100 p-3 w-[90%]  border-l-4 border-blue-700' : ' flex gap-2 p-3  '
+            }
+            >
+                <SettingsSuggestRoundedIcon />
+                <p>Details</p>
+            </NavLink>
+            <NavLink              
             to="/Cars"
             className={({ isActive }) =>
             isActive ? ' flex gap-2  text-gray-500 bg-slate-100 p-3 w-[90%]  border-l-4 border-blue-700' : ' flex gap-2 p-3  '
@@ -51,7 +71,7 @@ function SideBar() {
             </NavLink>
         </section>
         <section className='mx-auto'>
-            <button className='font-semibold bg-violet-800 text-white px-4 py-2 rounded-lg hover:bg-violet-600'>
+            <button className='font-semibold bg-blue-800 text-white px-3 py-1 rounded-lg hover:bg-600'>
                 <ExitToAppRoundedIcon />log-out
                 </button>
         </section>
