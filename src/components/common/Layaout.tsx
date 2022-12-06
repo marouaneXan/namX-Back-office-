@@ -7,7 +7,7 @@ function Layaout({children} : any) {
       <header className='w-[12%] bg-gray-50 rounded-t-[3rem] rounded-r-[3rem]'>
         <SideBar />
       </header>
-      <div className=' '>
+      <div className=' w-[88%] '>
       <article>{children}</article>
       </div>
     </main>

@@ -43,7 +43,7 @@ function SideBar() {
                 <p>Colors</p>
             </NavLink>
             <NavLink              
-            to="/detaille"
+            to="/details"
             className={({ isActive }) =>
             isActive ? ' flex gap-2  text-gray-500 bg-slate-100 p-3 w-[90%]  border-l-4 border-blue-700' : ' flex gap-2 p-3  '
             }
