@@ -1,10 +1,11 @@
 import React from 'react'
 
-function Cars() {
+const Sidebar = () => {
   return (
     <div>
+        
     </div>
   )
 }
 
-export default Cars
+export default Sidebar
