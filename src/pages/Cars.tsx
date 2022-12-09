@@ -1,5 +1,4 @@
 import React from "react";
-import { AiFillDelete } from "react-icons/ai";
 
 function Cars() {
   return (
