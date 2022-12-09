@@ -6,25 +6,37 @@ export const sidebarLink = [
     {
         id: "1",
         name: "Dashboard",
-        icone: BiHome,
+        icon: BiHome,
         path: "/dashboard"
     },
     {
         id: "2",
         name: "Clients",
-        icone: HiOutlineUsers,
+        icon: HiOutlineUsers,
         path: "/client"
     },
     {
         id: "3",
         name: "Cars",
-        icone: AiOutlineCar,
+        icon: AiOutlineCar,
         path: "/cars"
+    },
+    {
+        id: "3",
+        name: "Types",
+        icon: AiOutlineCar,
+        path: "/types"
+    },
+    {
+        id: "3",
+        name: "Details",
+        icon: AiOutlineCar,
+        path: "/details"
     },
     {
         id: "4",
         name: "Orders",
-        icone: CiShoppingBasket,
+        icon: CiShoppingBasket,
         path: "/ordes"
     },
 ]
