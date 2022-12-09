@@ -1,18 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TypeContextProvider from "./Context/Car/Types";
-import './App.css'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import {Login, Resgister} from './pages/index'
 import Sidebar from "./components/Layouts/Sidebar";
 import Navbar from "./components/Layouts/Navbar";
+import Dashboard from "./pages/Dashboard";
+import Cars from "./pages/Cars";
 function App() {
   return (
     <Router>
       <TypeContextProvider>
-        <Navbar/>
-        <Sidebar/>
+        <Navbar />
+        <Sidebar />
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Resgister />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/cars" element={<Cars />} />
         </Routes>
       </TypeContextProvider>
     </Router>
