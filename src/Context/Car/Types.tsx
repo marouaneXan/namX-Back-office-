@@ -1,8 +1,9 @@
 import { createContext, useState, useMemo, useEffect } from "react";
 import axios from "axios"
+import { Proxy } from "../../Config/Proxy";
 export const TypeContext = createContext(null);
 const TypeContextProvider = ({ children }: any) => {
-  const [types, setTypes] = useState();
+  const [types, setTypes] = useState([]);
   const [loading,setLoading]=useState<Boolean>(false)
   const [empty, setEmpty] = useState<boolean>(false);
   // get all types
