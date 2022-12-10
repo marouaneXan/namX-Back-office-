@@ -3,3 +3,7 @@ export interface Car {
     car_name: string,
     type: string
 }
+export interface Color {
+    _id: string,
+    desc: string,
+}

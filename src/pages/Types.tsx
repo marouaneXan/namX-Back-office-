@@ -4,6 +4,7 @@ import { TypeContext } from "../Context/Car/Types";
 
 const Types = () => {
   const { types }: any = useContext(TypeContext);
+  console.log(types);
   return (
     <div className="flex overflow-hidden bg-white pt-16">
       <div className="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
@@ -41,7 +42,9 @@ const Types = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    <TypeRow />
+                    {types?.map((type) => (
+                      <TypeRow type={type} />
+                    ))}
                   </tbody>
                 </table>
               </div>
