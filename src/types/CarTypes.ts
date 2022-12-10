@@ -15,6 +15,6 @@ export interface Detail {
 export interface Type {
     _id: string,
     car_type:string,
-    color: Color,
-    value:Detail
+    color: Color[],
+    value:Detail[]
 }
