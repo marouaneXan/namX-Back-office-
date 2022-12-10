@@ -12,3 +12,9 @@ export interface Detail {
     key: string,
     value:string
 }
+export interface Type {
+    _id: string,
+    car_type:string,
+    color: Color,
+    value:Detail
+}
