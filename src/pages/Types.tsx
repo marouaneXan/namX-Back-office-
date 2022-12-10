@@ -42,9 +42,9 @@ const Types = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {types?.map((type) => (
+                    {/* {types?.map((type) => (
                       <TypeRow type={type} />
-                    ))}
+                    ))} */}
                   </tbody>
                 </table>
               </div>
