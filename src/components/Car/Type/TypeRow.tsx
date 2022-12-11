@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ModalContext } from "../../../Context/Car/ModalContext";
+import { TypeContext } from "../../../Context/Car/Types";
 import { Color, Type } from "../../../types/CarTypes";
 import View from "./View";
 interface Props {
@@ -8,6 +9,7 @@ interface Props {
 
 const TypeRow = (props: Props) => {
   const { show, open }: any = useContext(ModalContext);
+  const {viewType}:any=useContext(TypeContext)
   return (
     <>
       {open && (
@@ -38,7 +40,10 @@ const TypeRow = (props: Props) => {
         </td>
         <td className="p-4 flex items-center mt-1 space-x-1 whitespace-nowrap lg:p-5">
           <button
-            onClick={show}
+            onClick={() => {
+              show();
+              viewType(props.type._id)
+            }}
             className="inline-flex items-center px-2 py-2 text-gray-800 text-sm font-medium rounded-md"
           >
             View
