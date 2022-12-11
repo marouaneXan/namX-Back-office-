@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { ModalContext } from "../../../Context/Car/ModalContext";
+import { TypeContext } from "../../../Context/Car/Types";
 const View = () => {
     const {close}:any=useContext(ModalContext)
+    const {type}:any=useContext(TypeContext)
   return (
     <div className="flex overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full">
       <div className="relative px-4 w-full max-w-2xl h-full md:h-auto">
