@@ -6,16 +6,21 @@ const ModalContextProvider = ({ children }: any) => {
   const show=()=>{
     setOpen(true)
   }
+  const close=()=>{
+    setOpen(false)
+  }
   
   
   const values: any = useMemo(
     () => ({
         open,
-        show
+        show,
+        close
     }),
     [
         open,
-        show
+        show,
+        close
     ]
   );
   return <ModalContext.Provider value={values}>{children}</ModalContext.Provider>;
