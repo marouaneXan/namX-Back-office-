@@ -1,13 +1,10 @@
 import React, { useContext } from "react";
 import TypeRow from "../components/Car/Type/TypeRow";
-import View from "../components/Car/Type/View";
-import { ModalContext } from "../Context/Car/ModalContext";
 import { TypeContext } from "../Context/Car/Types";
 import { Type } from "../types/CarTypes";
 
 const Types = () => {
   const { types }: any = useContext(TypeContext);
-  const { open }: any = useContext(ModalContext);
   return (
     <div className="flex overflow-hidden bg-white pt-16">
       <div className="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
@@ -48,12 +45,6 @@ const Types = () => {
                     {types?.map((type: Type) => (
                       <>
                         <TypeRow key={type._id} type={type} />
-                        {open && (
-                          <>
-                            <View />
-                            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-                          </>
-                        )}
                       </>
                     ))}
                   </tbody>
