@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import TypeRow from "../components/Car/Type/TypeRow";
+import View from "../components/Car/Type/View";
 import { TypeContext } from "../Context/Car/Types";
 import { Type } from "../types/CarTypes";
 
@@ -42,8 +43,12 @@ const Types = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {types?.map((type:Type) => (
-                      <TypeRow key={type._id} type={type} />
+                    {types?.map((type: Type) => (
+                      <>
+                        <TypeRow key={type._id} type={type} />
+                        <View />
+                        <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                      </>
                     ))}
                   </tbody>
                 </table>
