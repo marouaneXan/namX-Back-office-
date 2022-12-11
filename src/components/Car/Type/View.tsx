@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { ModalContext } from "../../../Context/Car/ModalContext";
 import { TypeContext } from "../../../Context/Car/Types";
+import { Color, Detail } from "../../../types/CarTypes";
 const View = () => {
-    const {close}:any=useContext(ModalContext)
-    const {type}:any=useContext(TypeContext)
+  const { close }: any = useContext(ModalContext);
+  const { type }: any = useContext(TypeContext);
+  console.log(type);
   return (
     <div className="flex overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full">
       <div className="relative px-4 w-full max-w-2xl h-full md:h-auto">
@@ -30,8 +32,39 @@ const View = () => {
               </svg>
             </button>
           </div>
-          <div className="px-6 py-2 space-y-6">
-            
+          <div className="px-6 py-8 flex space-x-8">
+            <div className="w-full">
+              <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+                Car type :
+              </h2>
+              <ul className="space-y-1 max-w-md list-disc list-inside text-gray-500 dark:text-gray-400">
+                <li>{type.car_type}</li>
+              </ul>
+            </div>
+            <div className="w-full">
+              <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+                Car details :
+              </h2>
+              <ul className="space-y-1 max-w-md list-disc list-inside text-gray-500 dark:text-gray-400">
+                {type?.details?.map((detail:Detail) => (
+                  <li key={detail._id}><span className="font-semibold text-gray-900 dark:text-white">{detail.key}</span>: {detail.value}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="w-full">
+              <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+                Colors available
+              </h2>
+              <div className="flex items-center">
+            {type?.color?.map((c: Color) => (
+              <div
+                className="border rounded-full p-3"
+                style={{ backgroundColor: `${c.desc}` }}
+                key={c._id}
+              ></div>
+            ))}
+          </div>
+            </div>
           </div>
         </div>
       </div>
