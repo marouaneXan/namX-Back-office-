@@ -1,12 +1,12 @@
 import { createContext, useState, useMemo, useEffect } from "react";
-import axios from "axios"
+import axios from "axios";
 import { Proxy } from "../../Config/Proxy";
 import { Type } from "../../types/CarTypes";
 export const TypeContext = createContext(null);
 const TypeContextProvider = ({ children }: any) => {
   const [types, setTypes] = useState<Type[] | null>([]);
   const [type, setType] = useState<Type[] | null>([]);
-  const [loading,setLoading]=useState<Boolean>(false)
+  const [loading, setLoading] = useState<Boolean>(false);
   const [empty, setEmpty] = useState<boolean>(false);
   // get all types
   const getTypes = async () => {
@@ -28,8 +28,25 @@ const TypeContextProvider = ({ children }: any) => {
     }
   };
 
+  //Add type
+  const addType = async (data: Type) => {
+    setLoading(true);
+    const res = await axios.post(`${Proxy}/types`, data).catch((err) => {
+      const message: any =
+        (err.res && err.res.data && err.res.data.message) || err || err.message;
+      if (message) {
+        setLoading(false);
+        console.log(message);
+        setLoading(false);
+      }
+    });
+    if (res && res.data) {
+      getTypes();
+    }
+  };
+
   // get type by id
-  const viewType = async (type_id:string) => {
+  const viewType = async (type_id: string) => {
     setLoading(true);
     const res = await axios.get(`${Proxy}/types/${type_id}`).catch((err) => {
       const message: any =
@@ -47,25 +64,20 @@ const TypeContextProvider = ({ children }: any) => {
       setType(res.data);
     }
   };
-  useEffect(()=>{
-    getTypes()
-  },[])
-  
+  useEffect(() => {
+    getTypes();
+  }, []);
+
   const values: any = useMemo(
     () => ({
       types,
       empty,
       loading,
       viewType,
-      type
+      type,
+      addType,
     }),
-    [
-      types,
-      empty,
-      loading,
-      viewType,
-      type
-    ]
+    [types, empty, loading, viewType, type, addType]
   );
   return <TypeContext.Provider value={values}>{children}</TypeContext.Provider>;
 };
