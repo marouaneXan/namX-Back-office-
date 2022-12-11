@@ -1,6 +1,7 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { ModalContext } from "../../../Context/Car/ModalContext";
 const View = () => {
+    const {close}:any=useContext(ModalContext)
   return (
     <div className="flex overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full">
       <div className="relative px-4 w-full max-w-2xl h-full md:h-auto">
@@ -8,7 +9,7 @@ const View = () => {
           <div className="flex justify-between items-start p-5 rounded-t border-b">
             <h3 className="text-xl font-semibold">View</h3>
             <button
-            //   onClick={props.closeModalAdd}
+              onClick={close}
               type="button"
               className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-2xl text-sm p-1.5 ml-auto inline-flex items-center"
               data-modal-toggle="add-product-modal"
