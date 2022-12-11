@@ -46,8 +46,13 @@ const View = () => {
                 Car details :
               </h2>
               <ul className="space-y-1 max-w-md list-disc list-inside text-gray-500 dark:text-gray-400">
-                {type?.details?.map((detail:Detail) => (
-                  <li key={detail._id}><span className="font-semibold text-gray-900 dark:text-white">{detail.key}</span>: {detail.value}</li>
+                {type?.details?.map((detail: Detail) => (
+                  <li key={detail._id}>
+                    <span className="font-semibold text-gray-900 dark:text-white">
+                      {detail.key}
+                    </span>
+                    : {detail.value}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -56,14 +61,14 @@ const View = () => {
                 Colors available
               </h2>
               <div className="flex items-center">
-            {type?.color?.map((c: Color) => (
-              <div
-                className="border rounded-full p-3"
-                style={{ backgroundColor: `${c.desc}` }}
-                key={c._id}
-              ></div>
-            ))}
-          </div>
+                {type?.color?.map((c: Color) => (
+                  <div
+                    className="border rounded-full p-3"
+                    style={{ backgroundColor: `${c.desc}` }}
+                    key={c._id}
+                  ></div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
