@@ -1,9 +1,11 @@
 import { createContext, useState, useMemo, useEffect } from "react";
 import axios from "axios"
 import { Proxy } from "../../Config/Proxy";
+import { Type } from "../../types/CarTypes";
 export const TypeContext = createContext(null);
 const TypeContextProvider = ({ children }: any) => {
-  const [types, setTypes] = useState([]);
+  const [types, setTypes] = useState<Type[] | null>([]);
+  const [type, setType] = useState<Type[] | null>([]);
   const [loading,setLoading]=useState<Boolean>(false)
   const [empty, setEmpty] = useState<boolean>(false);
   // get all types
@@ -25,6 +27,26 @@ const TypeContextProvider = ({ children }: any) => {
       setTypes(res.data);
     }
   };
+
+  // get type by id
+  const viewType = async (type_id:string) => {
+    setLoading(true);
+    const res = await axios.get(`${Proxy}/types/${type_id}`).catch((err) => {
+      const message: any =
+        (err.res && err.res.data && err.res.data.message) || err || err.message;
+      if (message) {
+        setLoading(false);
+        setEmpty(message.response.data.message);
+        setTimeout(() => {
+          setLoading(false);
+        }, 4000);
+      }
+    });
+    if (res && res.data) {
+      setLoading(false);
+      setType(res.data);
+    }
+  };
   useEffect(()=>{
     getTypes()
   },[])
@@ -33,12 +55,16 @@ const TypeContextProvider = ({ children }: any) => {
     () => ({
       types,
       empty,
-      loading
+      loading,
+      viewType,
+      type
     }),
     [
       types,
       empty,
-      loading
+      loading,
+      viewType,
+      type
     ]
   );
   return <TypeContext.Provider value={values}>{children}</TypeContext.Provider>;
