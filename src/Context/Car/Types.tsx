@@ -8,6 +8,15 @@ const TypeContextProvider = ({ children }: any) => {
   const [type, setType] = useState<Type[] | null>([]);
   const [loading, setLoading] = useState<Boolean>(false);
   const [empty, setEmpty] = useState<boolean>(false);
+  const [showModalAdd, setShowModalAdd] = useState<boolean>(false);
+  //Close modal Add
+  const closeModalAdd = () => {
+    setShowModalAdd(false);
+  };
+  //show modal Add
+  const displayModalAdd = () => {
+    setShowModalAdd(true);
+  };
   // get all types
   const getTypes = async () => {
     setLoading(true);
@@ -76,8 +85,21 @@ const TypeContextProvider = ({ children }: any) => {
       viewType,
       type,
       addType,
+      showModalAdd,
+      closeModalAdd,
+      displayModalAdd,
     }),
-    [types, empty, loading, viewType, type, addType]
+    [
+      types,
+      empty,
+      loading,
+      viewType,
+      type,
+      addType,
+      showModalAdd,
+      closeModalAdd,
+      displayModalAdd,
+    ]
   );
   return <TypeContext.Provider value={values}>{children}</TypeContext.Provider>;
 };
