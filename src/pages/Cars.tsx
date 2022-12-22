@@ -1,9 +1,12 @@
 import React from "react";
+import Button from "../components/Button";
+
 
 function Cars() {
   return (
     <div className="flex overflow-hidden bg-white pt-16">
       <div className="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
+      <Button content="Add" />
         <div className="flex flex-col my-6 mx-4 rounded-2xl shadow-xl shadow-gray-200">
           <div className="overflow-x-auto rounded-2xl">
             <div className="inline-block min-w-full align-middle">

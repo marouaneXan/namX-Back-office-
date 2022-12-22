@@ -1,25 +1,30 @@
 import React, { useContext } from 'react'
 import Button from "../components/Button";
 import Add from "../components/Car/Type/Add";
+import DetailAdd from '../components/Detail/DetailAdd';
 import DetailRow from "../components/Detail/DetailRow";
 import { DetailContext } from '../Context/Car/Detail';
-import { ModalContext } from "../Context/Car/ModalContext";
 import { TypeContext } from "../Context/Car/Types";
 import { Detail } from '../types/CarTypes';
 
+
 function Details() {
-  const {details}:any=useContext(DetailContext)
+  const {details,showModalAdd,closeModalAdd,displayModalAdd}:any=useContext(DetailContext)
   return (
     <div className="flex overflow-hidden bg-white pt-16">
     <div className="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
       <div className="flex flex-col my-6 mx-4 rounded-2xl shadow-xl shadow-gray-200">
-        <Button content="Add new Detail" />
-        {/* {open && (
+        <button 
+          onClick= {displayModalAdd} 
+        >Add</button>
+
+
+        {showModalAdd && (
           <>
-            <Add />
+            <DetailAdd closeModalAdd={closeModalAdd} />
             <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
           </>
-        )} */}
+        )}
         <div className="overflow-x-auto rounded-2xl">
           <div className="inline-block min-w-full align-middle">
             <div className="overflow-hidden">

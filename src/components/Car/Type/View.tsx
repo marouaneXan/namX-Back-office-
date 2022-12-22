@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { ModalContext } from "../../../Context/Car/ModalContext";
 import { TypeContext } from "../../../Context/Car/Types";
 import { Color, Detail } from "../../../types/CarTypes";
 const View = () => {
-  const { close }: any = useContext(ModalContext);
+  // const { closeModalAdd }: any = useContext(TypeContext);
   const { type }: any = useContext(TypeContext);
   console.log(type);
   return (

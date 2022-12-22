@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
+import { DetailContext } from "../../Context/Car/Detail";
+import Details from "../../pages/Details";
 import { Detail } from "../../types/CarTypes";
 interface Props {
   detail: Detail;
 }
 
 const DetailRow = (props: Props) => {
+  const {deleteDetail}:any=useContext(DetailContext)
+  const handleDelete=()=>{
+    deleteDetail(props.detail._id)
+  }
   return (
     <>
       <tr className="hover:bg-gray-100">
@@ -17,7 +23,9 @@ const DetailRow = (props: Props) => {
           {props.detail.value}
         </td>
         <td className="p-4 flex items-center mt-1 space-x-1 whitespace-nowrap lg:p-5">
-          <button className="inline-flex items-center px-2 py-2 text-red-500 text-sm font-medium rounded-md">
+          <button type="button" className="inline-flex items-center px-2 py-2 text-red-500 text-sm font-medium rounded-md" 
+           onClick={handleDelete}
+          >
             Delete
           </button>
           <button className="inline-flex items-center px-2 py-2 text-indigo-500 text-sm font-medium rounded-md">

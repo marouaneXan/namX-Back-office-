@@ -6,14 +6,12 @@ import Navbar from "./components/Layouts/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Cars from "./pages/Cars";
 import Types from "./pages/Types";
-import ModalContextProvider from "./Context/Car/ModalContext";
 import Details from "./pages/Details";
 import DetailContextProvider from "./Context/Car/Detail";
 function App() {
   return (
     <TypeContextProvider>
-      <ModalContextProvider>
-        <DetailContextProvider>
+      <DetailContextProvider>
         <Router>
           <Navbar />
           <Sidebar />
@@ -24,8 +22,7 @@ function App() {
             <Route path="/details" element={<Details />} />
           </Routes>
         </Router>
-        </DetailContextProvider>
-      </ModalContextProvider>
+      </DetailContextProvider>
     </TypeContextProvider>
   );
 }

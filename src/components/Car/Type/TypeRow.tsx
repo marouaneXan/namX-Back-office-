@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { ModalContext } from "../../../Context/Car/ModalContext";
 import { TypeContext } from "../../../Context/Car/Types";
 import { Color, Type } from "../../../types/CarTypes";
 import View from "./View";
@@ -8,11 +7,11 @@ interface Props {
 }
 
 const TypeRow = (props: Props) => {
-  const { show, open }: any = useContext(ModalContext);
+  const { show, showModalAdd }: any = useContext(TypeContext);
   const {viewType}:any=useContext(TypeContext)
   return (
     <>
-      {open && (
+      {showModalAdd && (
         <>
           <View />
           <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
@@ -50,9 +49,6 @@ const TypeRow = (props: Props) => {
           </button>
           <button className="inline-flex items-center px-2 py-2 text-red-500 text-sm font-medium rounded-md">
             Delete
-          </button>
-          <button className="inline-flex items-center px-2 py-2 text-indigo-500 text-sm font-medium rounded-md">
-            Update
           </button>
         </td>
       </tr>
